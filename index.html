@@ -8,6 +8,20 @@
 <meta name="theme-color" content="#10233f">
 <title>Voyage Calculator — Free Online Calculators</title>
 <style>
+  .site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 14px;
+}
+.site-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+.site-nav a:hover {
+  text-decoration: underline;
+}
 :root{--navy:#10233f;--blue:#2563eb;--bg:#f4f7fb;--text:#182235;--muted:#64748b}
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
@@ -40,6 +54,12 @@ footer a{color:var(--blue);margin:0 8px}
 <header>
   <div class="logo">Voyage <span>Calculator</span></div>
   <p>Simple tools. Smarter everyday decisions.</p>
+  <nav class="site-nav" aria-label="Main navigation">
+  <a href="./">Home</a>
+  <a href="guides.html">Guides</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
 </header>
 
 <section class="hero">
@@ -149,6 +169,7 @@ footer a{color:var(--blue);margin:0 8px}
   <p>© <span id="year"></span> Voyage Calculator. All rights reserved.</p>
   <p>
     <a href="privacy.html">Privacy Policy</a> |
+    <a href="guides.html">Guides</a> |
     <a href="about.html">About Us</a> |
     <a href="contact.html">Contact Us</a> |
     <a href="disclaimer.html">Disclaimer</a>
