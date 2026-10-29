@@ -77,16 +77,18 @@
  const volume=document.getElementById('vc-music-volume');
  if(!audio||!toggle||!volume)return;
  audio.volume=0.15;
- let ready=false;
- audio.addEventListener('canplay',()=>{ready=true;toggle.disabled=false;toggle.textContent=audio.paused?'▶ Putar':'⏸ Jeda';});
- audio.addEventListener('error',()=>{toggle.disabled=true;toggle.textContent='Upload music.mp3';});
+ toggle.disabled=false;
+ toggle.textContent='▶ Putar';
+ audio.addEventListener('error',()=>{toggle.textContent='Musik gagal dimuat';});
  toggle.addEventListener('click',async()=>{
-   if(!ready)return;
-   if(audio.paused){try{await audio.play();toggle.textContent='⏸ Jeda';}catch(e){toggle.textContent='▶ Coba lagi';}}
-   else{audio.pause();toggle.textContent='▶ Putar';}
+   if(audio.paused){
+     toggle.textContent='Memuat…';
+     try{await audio.play();toggle.textContent='⏸ Jeda';}
+     catch(e){toggle.textContent='▶ Coba lagi';}
+   } else {audio.pause();toggle.textContent='▶ Putar';}
  });
  volume.addEventListener('input',()=>{audio.volume=Number(volume.value);});
- audio.addEventListener('pause',()=>{if(ready)toggle.textContent='▶ Putar';});
+ audio.addEventListener('pause',()=>{toggle.textContent='▶ Putar';});
  audio.addEventListener('play',()=>{toggle.textContent='⏸ Jeda';});
 })();
 </script>
