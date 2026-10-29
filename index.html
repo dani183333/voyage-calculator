@@ -29,7 +29,9 @@ header{background:var(--navy);color:white;padding:20px max(5%,calc((100% - 1100p
 .logo{font-size:24px;font-weight:800;letter-spacing:-.5px}
 .logo span{color:#7dd3fc}
 header p{margin:4px 0;color:#dbeafe;font-size:14px}
-.hero{background:linear-gradient(135deg,#10233f,#1d4ed8);color:white;text-align:center;padding:52px 18px}
+.hero{background:linear-gradient(90deg,rgba(7,24,48,.88),rgba(10,46,83,.38)),url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85") center/cover;color:white;text-align:left;padding:78px max(5%,calc((100% - 1100px)/2));min-height:280px;display:flex;flex-direction:column;justify-content:center}.hero h1{margin:0 0 14px}.hero p{margin:0;max-width:650px}
+.card{transition:transform .2s ease,box-shadow .2s ease}.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #10233f18}.tool-icon{width:78px;height:70px;border-radius:18px;background:linear-gradient(135deg,#dbeafe,#eff6ff);display:flex;align-items:center;justify-content:center;font-size:40px;margin:0 0 15px;border:1px solid #bfdbfe}.card h2{display:flex;align-items:center;gap:10px}.card .tool-icon{margin:0 0 14px}.hero-kicker{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#bae6fd;margin-bottom:10px}
+@media(max-width:600px){.hero{padding:52px 20px;min-height:240px}.hero h1{font-size:32px}.tool-icon{width:64px;height:60px;font-size:34px}}
 .hero h1{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:0 auto 14px;max-width:750px}
 .hero p{max-width:650px;margin:auto;color:#e0eaff}
 .wrap{max-width:1100px;margin:30px auto;padding:0 16px}
@@ -81,28 +83,28 @@ footer a{color:var(--blue);margin:0 8px}
 
   <div class="grid" id="grid">
     <section class="card" data-name="percentage percent">
-      <h2>Percentage Calculator</h2><p>Find a percentage of any number.</p>
+      <div class="tool-icon" aria-hidden="true">📊</div><h2>Percentage Calculator</h2><p>Find a percentage of any number.</p>
       <label>Percentage (%)</label><input id="pct" type="number" placeholder="e.g. 15">
       <label>Number</label><input id="pnum" type="number" placeholder="e.g. 200">
       <button onclick="calc('percentage')">Calculate</button><div id="percentage" class="result hidden"></div>
     </section>
 
     <section class="card" data-name="discount sale price">
-      <h2>Discount Calculator</h2><p>Calculate sale prices and savings.</p>
+      <div class="tool-icon" aria-hidden="true">🏷️</div><h2>Discount Calculator</h2><p>Calculate sale prices and savings.</p>
       <label>Original price</label><input id="price" type="number" min="0" placeholder="e.g. 100">
       <label>Discount (%)</label><input id="disc" type="number" min="0" max="100" placeholder="e.g. 20">
       <button onclick="calc('discount')">Calculate</button><div id="discount" class="result hidden"></div>
     </section>
 
     <section class="card" data-name="bmi body mass index health">
-      <h2>BMI Calculator</h2><p>Estimate body mass index for adults.</p>
+      <div class="tool-icon" aria-hidden="true">⚖️</div><h2>BMI Calculator</h2><p>Estimate body mass index for adults.</p>
       <label>Weight (kg)</label><input id="weight" type="number" min="1" placeholder="e.g. 70">
       <label>Height (cm)</label><input id="height" type="number" min="1" placeholder="e.g. 175">
       <button onclick="calc('bmi')">Calculate BMI</button><div id="bmi" class="result hidden"></div>
     </section>
 
     <section class="card" data-name="loan mortgage monthly payment">
-      <h2>Loan Calculator</h2><p>Estimate monthly loan payments.</p>
+      <div class="tool-icon" aria-hidden="true">🏦</div><h2>Loan Calculator</h2><p>Estimate monthly loan payments.</p>
       <label>Loan amount</label><input id="loan" type="number" min="0" placeholder="e.g. 10000">
       <label>Annual interest rate (%)</label><input id="rate" type="number" min="0" step="any" placeholder="e.g. 6">
       <label>Loan term (years)</label><input id="years" type="number" min="1" placeholder="e.g. 5">
@@ -110,7 +112,7 @@ footer a{color:var(--blue);margin:0 8px}
     </section>
 
     <section class="card" data-name="tip restaurant bill">
-      <h2>Tip Calculator</h2><p>Calculate a tip and split a bill.</p>
+      <div class="tool-icon" aria-hidden="true">🧾</div><h2>Tip Calculator</h2><p>Calculate a tip and split a bill.</p>
       <label>Bill amount</label><input id="bill" type="number" min="0" placeholder="e.g. 50">
       <label>Tip (%)</label><input id="tip" type="number" min="0" placeholder="e.g. 15">
       <label>Number of people</label><input id="people" type="number" min="1" value="1">
@@ -118,7 +120,7 @@ footer a{color:var(--blue);margin:0 8px}
     </section>
 
     <section class="card" data-name="compound interest savings investment">
-      <h2>Compound Interest Calculator</h2><p>Estimate how savings may grow over time.</p>
+      <div class="tool-icon" aria-hidden="true">📈</div><h2>Compound Interest Calculator</h2><p>Estimate how savings may grow over time.</p>
       <label>Initial investment</label><input id="principal" type="number" min="0" placeholder="e.g. 1000">
       <label>Annual interest rate (%)</label><input id="interest" type="number" min="0" step="any" placeholder="e.g. 5">
       <label>Years</label><input id="duration" type="number" min="0" placeholder="e.g. 10">
@@ -126,14 +128,14 @@ footer a{color:var(--blue);margin:0 8px}
     </section>
 
     <section class="card" data-name="profit margin business">
-      <h2>Profit Calculator</h2><p>Calculate profit and profit margin.</p>
+      <div class="tool-icon" aria-hidden="true">💰</div><h2>Profit Calculator</h2><p>Calculate profit and profit margin.</p>
       <label>Revenue / selling price</label><input id="revenue" type="number" placeholder="e.g. 500">
       <label>Total cost</label><input id="cost" type="number" placeholder="e.g. 300">
       <button onclick="calc('profit')">Calculate Profit</button><div id="profit" class="result hidden"></div>
     </section>
 
     <section class="card" data-name="unit converter length weight">
-      <h2>Unit Converter</h2><p>Convert common length and weight units.</p>
+      <div class="tool-icon" aria-hidden="true">🌐</div><h2>Unit Converter</h2><p>Convert common length and weight units.</p>
       <label>Value</label><input id="unitValue" type="number" placeholder="Enter a value">
       <label>Convert</label><select id="unitType">
         <option value="kmmi">Kilometers to miles</option>
@@ -149,13 +151,13 @@ footer a{color:var(--blue);margin:0 8px}
     </section>
 
     <section class="card" data-name="age birthday date">
-      <h2>Age Calculator</h2><p>Calculate your age from your date of birth.</p>
+      <div class="tool-icon" aria-hidden="true">🎂</div><h2>Age Calculator</h2><p>Calculate your age from your date of birth.</p>
       <label>Date of birth</label><input id="birth" type="date">
       <button onclick="calc('age')">Calculate Age</button><div id="age" class="result hidden"></div>
     </section>
 
     <section class="card" data-name="electricity energy cost">
-      <h2>Electricity Cost Calculator</h2><p>Estimate appliance electricity costs.</p>
+      <div class="tool-icon" aria-hidden="true">⚡</div><h2>Electricity Cost Calculator</h2><p>Estimate appliance electricity costs.</p>
       <label>Power (watts)</label><input id="watts" type="number" min="0" placeholder="e.g. 100">
       <label>Hours used per day</label><input id="hours" type="number" min="0" placeholder="e.g. 8">
       <label>Electricity price per kWh</label><input id="kwhPrice" type="number" min="0" placeholder="e.g. 0.15">
