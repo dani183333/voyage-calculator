@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free online calculators for percentages, discounts, BMI, loans, age, tips and everyday calculations. Fast, simple and easy to use.">
+<meta name="theme-color" content="#10233f">
+<title>Voyage Calculator — Free Online Calculators</title>
+<style>
+:root{--navy:#10233f;--blue:#2563eb;--bg:#f4f7fb;--text:#182235;--muted:#64748b}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:var(--navy);color:white;padding:20px max(5%,calc((100% - 1100px)/2))}
+.logo{font-size:24px;font-weight:800;letter-spacing:-.5px}
+.logo span{color:#7dd3fc}
+header p{margin:4px 0;color:#dbeafe;font-size:14px}
+.hero{background:linear-gradient(135deg,#10233f,#1d4ed8);color:white;text-align:center;padding:52px 18px}
+.hero h1{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:0 auto 14px;max-width:750px}
+.hero p{max-width:650px;margin:auto;color:#e0eaff}
+.wrap{max-width:1100px;margin:30px auto;padding:0 16px}
+.search{display:block;width:100%;padding:14px;border:1px solid #dbe2ea;border-radius:12px;font-size:16px;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:18px}
+.card{background:white;border:1px solid #e2e8f0;border-radius:16px;padding:22px;box-shadow:0 5px 20px #10233f08}
+.card h2{font-size:19px;margin:0 0 5px}
+.card p{font-size:14px;color:var(--muted);margin:0 0 16px}
+label{display:block;font-size:14px;font-weight:600;margin:12px 0 5px}
+input,select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:white}
+button{width:100%;margin-top:14px;background:var(--blue);color:white;border:0;padding:12px;border-radius:8px;font-weight:700;font-size:15px;cursor:pointer}
+button:hover{background:#1d4ed8}
+.result{margin-top:14px;padding:12px;background:#eff6ff;border-radius:8px;color:#1e40af;font-weight:700;overflow-wrap:anywhere}
+.hidden{display:none}
+h2.section{font-size:26px;margin:28px 0 16px}
+.about{background:white;border-radius:14px;padding:24px;margin-top:28px}
+footer{text-align:center;padding:30px 15px;color:var(--muted);font-size:13px}
+footer a{color:var(--blue);margin:0 8px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Voyage <span>Calculator</span></div>
+  <p>Simple tools. Smarter everyday decisions.</p>
+</header>
+
+<section class="hero">
+  <h1>Free Online Calculators for Everyday Life</h1>
+  <p>Calculate percentages, discounts, loans, health measurements and more with free, simple online tools.</p>
+</section>
+
+<main class="wrap">
+  <input class="search" id="search" placeholder="Search calculators..." aria-label="Search calculators">
+  <h2 class="section">Popular Calculators</h2>
+
+  <div class="grid" id="grid">
+    <section class="card" data-name="percentage percent">
+      <h2>Percentage Calculator</h2><p>Find a percentage of any number.</p>
+      <label>Percentage (%)</label><input id="pct" type="number" placeholder="e.g. 15">
+      <label>Number</label><input id="pnum" type="number" placeholder="e.g. 200">
+      <button onclick="calc('percentage')">Calculate</button><div id="percentage" class="result hidden"></div>
+    </section>
+
+    <section class="card" data-name="discount sale price">
+      <h2>Discount Calculator</h2><p>Calculate sale prices and savings.</p>
+      <label>Original price</label><input id="price" type="number" min="0" placeholder="e.g. 100">
+      <label>Discount (%)</label><input id="disc" type="number" min="0" max="100" placeholder="e.g. 20">
+      <button onclick="calc('discount')">Calculate</button><div id="discount" class="result hidden"></div>
+    </section>
+
+    <section class="card" data-name="bmi body mass index health">
+      <h2>BMI Calculator</h2><p>Estimate body mass index for adults.</p>
+      <label>Weight (kg)</label><input id="weight" type="number" min="1" placeholder="e.g. 70">
+      <label>Height (cm)</label><input id="height" type="number" min="1" placeholder="e.g. 175">
+      <button onclick="calc('bmi')">Calculate BMI</button><div id="bmi" class="result hidden"></div>
+    </section>
+
+    <section class="card" data-name="loan mortgage monthly payment">
+      <h2>Loan Calculator</h2><p>Estimate monthly loan payments.</p>
+      <label>Loan amount</label><input id="loan" type="number" min="0" placeholder="e.g. 10000">
+      <label>Annual interest rate (%)</label><input id="rate" type="number" min="0" step="any" placeholder="e.g. 6">
+      <label>Loan term (years)</label><input id="years" type="number" min="1" placeholder="e.g. 5">
+      <button onclick="calc('loan')">Calculate Payment</button><div id="loanResult" class="result hidden"></div>
+    </section>
+
+    <section class="card" data-name="tip restaurant bill">
+      <h2>Tip Calculator</h2><p>Calculate a tip and split a bill.</p>
+      <label>Bill amount</label><input id="bill" type="number" min="0" placeholder="e.g. 50">
+      <label>Tip (%)</label><input id="tip" type="number" min="0" placeholder="e.g. 15">
+      <label>Number of people</label><input id="people" type="number" min="1" value="1">
+      <button onclick="calc('tip')">Calculate Tip</button><div id="tipResult" class="result hidden"></div>
+    </section>
+
+    <section class="card" data-name="compound interest savings investment">
+      <h2>Compound Interest Calculator</h2><p>Estimate how savings may grow over time.</p>
+      <label>Initial investment</label><input id="principal" type="number" min="0" placeholder="e.g. 1000">
+      <label>Annual interest rate (%)</label><input id="interest" type="number" min="0" step="any" placeholder="e.g. 5">
+      <label>Years</label><input id="duration" type="number" min="0" placeholder="e.g. 10">
+      <button onclick="calc('compound')">Calculate Growth</button><div id="compound" class="result hidden"></div>
+    </section>
+
+    <section class="card" data-name="profit margin business">
+      <h2>Profit Calculator</h2><p>Calculate profit and profit margin.</p>
+      <label>Revenue / selling price</label><input id="revenue" type="number" placeholder="e.g. 500">
+      <label>Total cost</label><input id="cost" type="number" placeholder="e.g. 300">
+      <button onclick="calc('profit')">Calculate Profit</button><div id="profit" class="result hidden"></div>
+    </section>
+
+    <section class="card" data-name="unit converter length weight">
+      <h2>Unit Converter</h2><p>Convert common length and weight units.</p>
+      <label>Value</label><input id="unitValue" type="number" placeholder="Enter a value">
+      <label>Convert</label><select id="unitType">
+        <option value="kmmi">Kilometers to miles</option>
+        <option value="mikm">Miles to kilometers</option>
+        <option value="cmIn">Centimeters to inches</option>
+        <option value="inCm">Inches to centimeters</option>
+        <option value="kgLb">Kilograms to pounds</option>
+        <option value="lbKg">Pounds to kilograms</option>
+        <option value="cF">Celsius to Fahrenheit</option>
+        <option value="fC">Fahrenheit to Celsius</option>
+      </select>
+      <button onclick="calc('unit')">Convert</button><div id="unit" class="result hidden"></div>
+    </section>
+
+    <section class="card" data-name="age birthday date">
+      <h2>Age Calculator</h2><p>Calculate your age from your date of birth.</p>
+      <label>Date of birth</label><input id="birth" type="date">
+      <button onclick="calc('age')">Calculate Age</button><div id="age" class="result hidden"></div>
+    </section>
+
+    <section class="card" data-name="electricity energy cost">
+      <h2>Electricity Cost Calculator</h2><p>Estimate appliance electricity costs.</p>
+      <label>Power (watts)</label><input id="watts" type="number" min="0" placeholder="e.g. 100">
+      <label>Hours used per day</label><input id="hours" type="number" min="0" placeholder="e.g. 8">
+      <label>Electricity price per kWh</label><input id="kwhPrice" type="number" min="0" placeholder="e.g. 0.15">
+      <button onclick="calc('electricity')">Estimate Cost</button><div id="electricity" class="result hidden"></div>
+    </section>
+  </div>
+
+  <section class="about">
+    <h2>About Voyage Calculator</h2>
+    <p>Voyage Calculator provides free online tools designed to make everyday calculations easier. Use our calculators for shopping discounts, personal finance estimates, unit conversions and more. Results are estimates for general informational purposes and should be checked before making important financial or health decisions.</p>
+    <h2>Frequently Asked Questions</h2>
+    <h3>Are these calculators free?</h3><p>Yes. You can use the calculators on this website for free.</p>
+    <h3>Do I need to install an app?</h3><p>No. Open this website in your browser on a computer, tablet or smartphone.</p>
+  </section>
+</main>
+
+<footer>
+  <p>© <span id="year"></span> Voyage Calculator. All rights reserved.</p>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</footer>
+
+<script>
+const el=id=>document.getElementById(id);
+const num=id=>Number(el(id).value);
+const money=n=>n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+function show(id,msg){el(id).textContent=msg;el(id).classList.remove('hidden')}
+function valid(ids){return ids.every(id=>el(id).value.trim()!==''&&Number.isFinite(num(id)))}
+function calc(type){
+ let out='',v;
+ if(type==='percentage'){
+  if(!valid(['pct','pnum']))return show('percentage','Enter both numbers.');
+  out=num('pct')+'% of '+num('pnum')+' = '+money(num('pct')*num('pnum')/100);
+  show('percentage',out)
+ }else if(type==='discount'){
+  if(!valid(['price','disc'])||num('price')<0||num('disc')<0||num('disc')>100)return show('discount','Enter a valid price and discount from 0 to 100%.');
+  show('discount','Sale price: '+money(num('price')*(1-num('disc')/100))+' | You save: '+money(num('price')*num('disc')/100))
+ }else if(type==='bmi'){
+  if(!valid(['weight','height'])||num('weight')<=0||num('height')<=0)return show('bmi','Enter a valid weight and height.');
+  v=num('weight')/Math.pow(num('height')/100,2);
+  show('bmi','BMI: '+v.toFixed(1)+' — '+(v<18.5?'Underweight':v<25?'Normal weight':v<30?'Overweight':'Obesity range')+'. Adult categories are general guidance, not a diagnosis.')
+ }else if(type==='loan'){
+  if(!valid(['loan','rate','years'])||num('loan')<=0||num('rate')<0||num('years')<=0)return show('loanResult','Enter a positive loan amount and term, and a non-negative rate.');
+  let p=num('loan'),r=num('rate')/1200,n=num('years')*12;
+  v=r===0?p/n:p*r/(1-Math.pow(1+r,-n));
+  show('loanResult','Estimated monthly payment: '+money(v)+' | Total paid: '+money(v*n)+' | Excludes fees and taxes.')
+ }else if(type==='tip'){
+  if(!valid(['bill','tip','people'])||num('bill')<0||num('tip')<0||num('people')<1)return show('tipResult','Enter valid bill, tip and number of people.');
+  let t=num('bill')*num('tip')/100;
+  show('tipResult','Tip: '+money(t)+' | Total: '+money(num('bill')+t)+' | Per person: '+money((num('bill')+t)/Math.floor(num('people'))))
+ }else if(type==='compound'){
+  if(!valid(['principal','interest','duration'])||num('principal')<0||num('interest')<0||num('duration')<0)return show('compound','Enter valid non-negative values.');
+  v=num('principal')*Math.pow(1+num('interest')/100,num('duration'));
+  show('compound','Estimated future value: '+money(v)+' | Interest earned: '+money(v-num('principal'))+' (annual compounding, no additional deposits)')
+ }else if(type==='profit'){
+  if(!valid(['revenue','cost'])||num('revenue')<0||num('cost')<0)return show('profit','Enter valid non-negative amounts.');
+  let p=num('revenue')-num('cost');
+  show('profit','Profit: '+money(p)+' | Profit margin: '+(num('revenue')? (p/num('revenue')*100).toFixed(2)+'%':'Not defined when revenue is zero'))
+ }else if(type==='unit'){
+  if(!valid(['unitValue']))return show('unit','Enter a number to convert.');
+  let x=num('unitValue'),map={kmmi:[x=>x*.621371,' miles'],mikm:[x=>x*1.609344,' km'],cmIn:[x=>x/2.54,' inches'],inCm:[x=>x*2.54,' cm'],kgLb:[x=>x*2.204623,' lb'],lbKg:[x=>x/2.204623,' kg'],cF:[x=>x*9/5+32,' °F'],fC:[x=>(x-32)*5/9,' °C']};
+  let m=map[el('unitType').value];show('unit',m[0](x).toLocaleString('en-US',{maximumFractionDigits:4})+m[1])
+ }else if(type==='age'){
+  let b=el('birth').value;if(!b)return show('age','Select your date of birth.');
+  let d=new Date(b+'T00:00:00'),now=new Date();
+  if(d>now)return show('age','Date of birth cannot be in the future.');
+  let y=now.getFullYear()-d.getFullYear(),m=now.getMonth()-d.getMonth(),day=now.getDate()-d.getDate();
+  if(day<0){m--;day=new Date(now.getFullYear(),now.getMonth(),0).getDate()+day}
+  if(m<0){y--;m+=12}
+  show('age','Age: '+y+' years, '+m+' months, '+day+' days.')
+ }else if(type==='electricity'){
+  if(!valid(['watts','hours','kwhPrice'])||num('watts')<0||num('hours')<0||num('kwhPrice')<0)return show('electricity','Enter valid non-negative values.');
+  let kwh=num('watts')*num('hours')/1000;
+  show('electricity','Energy per day: '+kwh.toFixed(3)+' kWh | Daily cost: '+money(kwh*num('kwhPrice'))+' | 30-day estimate: '+money(kwh*num('kwhPrice')*30))
+ }
+}
+el('search').addEventListener('input',e=>{
+ let q=e.target.value.toLowerCase();
+ document.querySelectorAll('.card').forEach(c=>c.classList.toggle('hidden',!c.dataset.name.includes(q)||!c.textContent.toLowerCase().includes(q)&&!c.dataset.name.includes(q)))
+});
+el('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
