@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn how to calculate percentages, discounts, BMI, loan payments, compound interest, profit margins, and electricity costs with simple examples.">
+  <meta name="robots" content="index, follow">
+  <title>Calculation Guides | Voyage Calculator</title>
+  <link rel="canonical" href="https://dani183333.github.io/voyage-calculator/guides.html">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      color: #243047;
+      background: #f5f7fb;
+    }
+    header {
+      background: #123b70;
+      color: white;
+      padding: 24px 18px;
+    }
+    nav, main, footer {
+      max-width: 900px;
+      margin: auto;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+    nav a { color: white; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 24px 16px; }
+    .intro, article {
+      background: white;
+      padding: 22px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px #14213d0b;
+    }
+    h1, h2 { line-height: 1.3; }
+    h1 { font-size: 2rem; }
+    h2 { color: #123b70; }
+    .formula {
+      background: #edf4ff;
+      padding: 12px 15px;
+      border-left: 4px solid #2874d0;
+      border-radius: 5px;
+      overflow-wrap: anywhere;
+      font-weight: bold;
+    }
+    .note { color: #526176; font-size: .95rem; }
+    a { color: #1766c2; }
+    footer {
+      padding: 20px 16px 35px;
+      text-align: center;
+    }
+    footer a { margin: 0 8px; }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.65rem; }
+      .intro, article { padding: 17px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav aria-label="Main navigation">
+    <strong>Voyage Calculator</strong>
+    <a href="./">Home</a>
+    <a href="guides.html">Guides</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="intro">
+    <h1>Practical Calculation Guides</h1>
+    <p>
+      Learn how to solve everyday financial, health, and household
+      calculations with simple formulas and worked examples.
+      These guides explain the basics so you can understand your
+      results instead of relying on numbers alone.
+    </p>
+    <p>
+      Use our <a href="./">free online calculators</a> to try the
+      calculations with your own numbers.
+    </p>
+  </section>
+
+  <article id="percentage">
+    <h2>1. How to Calculate a Percentage</h2>
+    <p>
+      A percentage expresses a number as a fraction of 100.
+      It is commonly used to compare prices, scores, expenses,
+      and changes in value.
+    </p>
+    <p class="formula">Percentage = (Part ÷ Whole) × 100</p>
+    <p><strong>Example:</strong> You answered 45 questions correctly
+      out of 60. Your score is (45 ÷ 60) × 100 = 75%.</p>
+    <p>To find 15% of 200, multiply 200 by 0.15. The result is 30.</p>
+    <p>Use the <a href="./">Percentage Calculator</a> to calculate
+      percentages and find a percentage of any number.</p>
+  </article>
+
+  <article id="discount">
+    <h2>2. How to Calculate a Discount</h2>
+    <p>
+      A discount reduces the original price of a product or service.
+      Knowing the discount amount helps you compare offers and plan
+      your spending.
+    </p>
+    <p class="formula">Discount = Original Price × Discount Rate</p>
+    <p class="formula">Sale Price = Original Price − Discount</p>
+    <p><strong>Example:</strong> An item costs $100 and has a 20%
+      discount. You save $20 and pay $80 before any additional taxes
+      or fees.</p>
+    <p>Remember that a discount percentage is usually applied to the
+      original price unless the offer states otherwise.</p>
+    <p>Try the <a href="./">Discount Calculator</a> to estimate your
+      savings and final price.</p>
+  </article>
+
+  <article id="bmi">
+    <h2>3. How to Calculate Body Mass Index (BMI)</h2>
+    <p>
+      Body Mass Index (BMI) is a screening measure that compares
+      weight with height. It can provide a general indication of
+      weight status in adults, but it does not directly measure
+      body fat or overall health.
+    </p>
+    <p class="formula">BMI = Weight (kg) ÷ Height (m)²</p>
+    <p><strong>Example:</strong> At 70 kg and 1.75 m tall,
+      BMI = 70 ÷ (1.75 × 1.75) ≈ 22.9.</p>
+    <p>
+      For adults, a BMI from 18.5 to 24.9 is commonly classified
+      as the healthy-weight range. Interpretation may differ for
+      children, teenagers, pregnant people, and some athletes.
+    </p>
+    <p class="note">
+      BMI is not a diagnosis. Speak with a qualified healthcare
+      professional for an individual assessment.
+    </p>
+    <p>Calculate your result with the <a href="./">BMI Calculator</a>.</p>
+  </article>
+
+  <article id="loan">
+    <h2>4. How to Calculate Monthly Loan Payments</h2>
+    <p>
+      A fixed-payment loan is commonly repaid through regular
+      installments covering principal and interest. Your payment
+      depends on the amount borrowed, interest rate, and repayment
+      period.
+    </p>
+    <p class="formula">
+      M = P × r × (1 + r)<sup>n</sup> ÷ ((1 + r)<sup>n</sup> − 1)
+    </p>
+    <p>Where:</p>
+    <ul>
+      <li><strong>M</strong> = monthly payment</li>
+      <li><strong>P</strong> = principal borrowed</li>
+      <li><strong>r</strong> = monthly interest rate as a decimal</li>
+      <li><strong>n</strong> = total number of monthly payments</li>
+    </ul>
+    <p>
+      For example, a $10,000 loan with a 6% nominal annual interest
+      rate repaid over five years has a monthly payment of about
+      $193.33, assuming a fixed rate and monthly payments.
+    </p>
+    <p>
+      Actual payments may differ because of fees, insurance,
+      rounding, or lender-specific terms. Compare the total amount
+      repaid, not just the monthly payment.
+    </p>
+    <p>Estimate your installments using the <a href="./">Loan Calculator</a>.</p>
+  </article>
+
+  <article id="compound-interest">
+    <h2>5. Understanding Compound Interest</h2>
+    <p>
+      Compound interest occurs when interest is added to your
+      balance and future interest is calculated on the growing
+      balance. Over time, this can make savings or investments grow
+      faster than with simple interest.
+    </p>
+    <p class="formula">A = P × (1 + r)<sup>t</sup></p>
+    <p>Where:</p>
+    <ul>
+      <li><strong>A</strong> = future value</li>
+      <li><strong>P</strong> = initial principal</li>
+      <li><strong>r</strong> = annual interest rate as a decimal</li>
+      <li><strong>t</strong> = number of years</li>
+    </ul>
+    <p>
+      <strong>Example:</strong> $1,000 invested at 5% annually for
+      10 years becomes approximately $1,628.89, assuming annual
+      compounding and no additional deposits or withdrawals.
+    </p>
+    <p>
+      Actual returns may vary. Investment returns are not guaranteed,
+      and fees, taxes, and inflation can affect the final value.
+    </p>
+    <p>Explore different rates and time periods with the
+      <a href="./">Compound Interest Calculator</a>.</p>
+  </article>
+
+  <article id="profit">
+    <h2>6. How to Calculate Profit Margin</h2>
+    <p>
+      Profit margin shows what percentage of revenue remains as
+      profit after the costs included in your calculation.
+      It helps businesses evaluate pricing and financial performance.
+    </p>
+    <p class="formula">Profit = Revenue − Total Costs</p>
+    <p class="formula">Profit Margin = (Profit ÷ Revenue) × 100</p>
+    <p>
+      <strong>Example:</strong> A product generates $500 in revenue
+      and has $300 in costs. Profit is $200, and the profit margin
+      is ($200 ÷ $500) × 100 = 40%.
+    </p>
+    <p>
+      Profit margin and markup are different. Margin compares profit
+      with revenue, while markup compares profit with cost.
+      Make sure you include the relevant costs for your business.
+    </p>
+    <p>Use the <a href="./">Profit Calculator</a> to estimate profit
+      and margin.</p>
+  </article>
+
+  <article id="electricity">
+    <h2>7. How to Calculate Electricity Costs</h2>
+    <p>
+      Electricity consumption is commonly measured in kilowatt-hours
+      (kWh). You can estimate the energy used by an appliance from
+      its power rating and operating time.
+    </p>
+    <p class="formula">
+      Energy (kWh) = Power (W) × Hours Used ÷ 1,000
+    </p>
+    <p class="formula">Cost = Energy Used (kWh) × Price per kWh</p>
+    <p>
+      <strong>Example:</strong> A 100-watt appliance running for
+      eight hours uses 0.8 kWh. At $0.15 per kWh, the estimated
+      energy cost is $0.12.
+    </p>
+    <p>
+      This estimate excludes fixed service charges, taxes, and other
+      fees that may appear on your electricity bill. Actual usage
+      may also differ from the rated power.
+    </p>
+    <p>Estimate household energy expenses with the
+      <a href="./">Electricity Cost Calculator</a>.</p>
+  </article>
+
+  <article id="tips">
+    <h2>Tips for Getting Reliable Results</h2>
+    <ul>
+      <li>Check that your units are correct before entering values.</li>
+      <li>Use the same currency when comparing prices and costs.</li>
+      <li>Confirm whether interest rates are annual or monthly.</li>
+      <li>Round only after completing the calculation.</li>
+      <li>Review assumptions before using estimates for financial decisions.</li>
+    </ul>
+  </article>
+
+  <article id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <h3>Are Voyage Calculator tools free?</h3>
+    <p>
+      The calculators on this website are intended for free
+      everyday calculations. Check each tool for its available
+      inputs and features.
+    </p>
+    <h3>Are calculator results guaranteed to be exact?</h3>
+    <p>
+      Results depend on the information entered and the assumptions
+      used. Financial estimates may exclude taxes, fees, or special
+      contract terms.
+    </p>
+    <h3>Can I use these results for professional advice?</h3>
+    <p>
+      These guides provide general educational information. They do
+      not replace professional financial, medical, or other
+      qualified advice when needed.
+    </p>
+  </article>
+</main>
+
+<footer>
+  <p>Voyage Calculator — Practical tools for everyday calculations.</p>
+  <a href="./">Home</a>
+  <a href="about.html">About</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="disclaimer.html">Disclaimer</a>
+  <a href="contact.html">Contact</a>
+</footer>
+</body>
+</html>
